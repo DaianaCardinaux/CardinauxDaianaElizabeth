@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../css/individual.css">
+    <link rel="icon" type="image/x-icon" href="../images/Poké_Ball_icon.svg.png">
+    <title>Pokemon</title>
+</head>
+<body>
+    <div class="contenedorNav" style="background-color: rgb(0, 0, 0); height: 80px;">  
+        <img class="imagen" src="../images/p.png" alt="">
+            <div class="NavLinks">
+                <a class="Nav" href="../index.html">Inicio</a>
+                <a class="Nav" href="./Random.html">Grupo</a>
+            </div>
+    </div>
+    <br>
+
+    <h2 class="titulo">Compara ataques de pokemones</h2>
+    
+    <div class="contenedorInput">
+            <br>
+        <h3 class="TituloIngreso">Ingresa ID Primer Pokemon</h3>
+        <input id="PokemonUno" class="InputPokemon"></input>
+
+
+        <h3 class="TituloIngreso">Ingresa ID Segundo Pokemon</h3>
+        <input id="PokemonDos" class="InputPokemon"></input>
+            <br><br>
+        <button id="IngresoPokemon" class="boton">Ingresar Pokemones</button>
+    </div>
+
+    <h2 class="tituloPelea">Pelea de Pokemones</h2>
+
+    <span class="contenedor">
+        <div class="Tarjeta"><br>
+            <h2 id="TituloPokemonUno" class="TituloPokemon"></h2><br>
+            <img id="ImagenPokemonUno">
+            <ul id="listaPokemonUno" class="listaPokemon"></ul>
+        </div>
+
+        <h1 style="margin: 30px; font-size: 50px; color: rgb(196, 23, 23);">VS</h1>
+
+        <div class="Tarjeta"><br>
+            <h2 id="TituloPokemonDos" class="TituloPokemon"></h2><br>
+            <img id="ImagenPokemonDos">
+            <ul id="listaPokemonDos" class="listaPokemon"></ul>
+        </div>
+    </span><br>
+  
+    <h2 class="tituloPelea">Pokemon Ganador</h2>
+
+    <span class="contenedor">
+        <div class="Tarjeta"><br>
+            <h2 id="TituloPokemonGanador" class="TituloPokemon"></h2><br>
+            <img id="ImagenPokemonGanador">
+            <ul id="listaPokemonGanador" class="listaPokemon"></ul>
+        </div>
+    </span>
+
+</body>
+    <script src="../js/individual.js"></script>
+</html>

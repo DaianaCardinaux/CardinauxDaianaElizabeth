@@ -1,0 +1,79 @@
+.titulo {
+    color: rgb(204, 14, 14);
+    display: flex;
+    align-items: center; 
+    justify-content: center;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+.contenedor {
+    display: flex;
+    align-items: center; 
+    justify-content: center; 
+}
+
+.Logo {
+    width: 500px;
+    margin: 100px;
+}
+
+.FondoInicio {
+    background-color: rgb(0, 0, 0);
+    height: 480px;
+    box-shadow: 1px 0.1px 10px rgba(22, 22, 22, 1);
+
+    display: flex;   
+    align-items: center; 
+    justify-content: center; 
+}
+
+#carouselExampleSlidesOnly { 
+    width: 50%;  
+    height: 400px;
+    overflow: hidden;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.carousel-inner {
+    width: 100%;
+    height: 100%;
+}
+
+.carousel-item {
+    width: 100%;
+    height: 100%;
+    display: flex; 
+    justify-content: center;
+    align-items: center;
+}
+
+.img-slide {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.boton {
+    width: 550px;
+    font-size: 30px; 
+    font-weight: bold; 
+    letter-spacing: 1px;
+    font-family: 'Courier New', Courier, monospace;
+
+    border-radius: 200px; 
+    background-color: rgb(247, 244, 66);
+    color: rgb(185, 0, 0);
+
+    margin: 10px;
+}
+
+.botones {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
