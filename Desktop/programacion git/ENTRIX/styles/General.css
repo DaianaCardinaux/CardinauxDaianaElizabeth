@@ -1,0 +1,166 @@
+/* aqui estara: academico, video, nosotros y FAQ*/
+
+/* ------------------ FAQ ----------------------- */
+
+* {
+    margin: 0;
+}
+
+.navContainer {
+    background-color: rgba(0, 0, 0, 0.932);
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
+    position: static;
+}
+
+.preguntaContainer {
+    width: 100%;
+    padding: 50px;
+
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    flex-direction: column;
+}
+
+.pregunta {
+    padding: 10px;
+    background-color: #48A6A7;
+    color: #164e80;
+
+    font-size: 25px;
+    letter-spacing: 1px;
+    font-weight: 500;
+
+    border-color: #164e80;
+    border-style: ridge;
+    border-width: 2px;
+    
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
+
+    margin: 30px 0 30px 0;
+
+    z-index: 2;
+}
+
+.respuesta {
+    height: 0;
+    overflow: hidden;
+    transition: 0.5s ease-in-out;
+
+    font-size: 20px;
+    letter-spacing: 1px;
+    text-align: justify;
+
+    background-color: #9ACBD0;
+
+}
+
+.respuesta.visible {
+    height: 250px; 
+    margin: -35px 50px 0px 50px; 
+    padding: 20px 20px 0 20px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
+    z-index: 1;
+}
+
+.hidden {
+    height: 0;
+}
+
+/* ------------------ ACADEMICO Y VIDEO ----------------------- */
+
+.titulo {
+    display: flex;
+    justify-content: center;
+    align-content: center;
+
+    margin: 50px 0 50px 0;
+
+    font-size: 50px;
+    color: #2973B2;
+
+    letter-spacing: 2px;
+}
+
+.VideoContainer {
+    margin: 50px 0 50px 0;
+    height: 700px;
+    background-color: #9ACBD0;
+
+    box-shadow: 
+        0 -2px 20px 1px rgba(103, 172, 204, 0.185), 
+        0 2px 20px 1px rgba(103, 172, 204, 0.185);  
+}
+
+.AcademicoContainer {
+    margin: 50px;
+    height: 1500px;
+    background-color: #9ACBD0;
+
+    box-shadow: 
+        0 -2px 20px 1px rgba(103, 172, 204, 0.185), 
+        0 2px 20px 1px rgba(103, 172, 204, 0.185);  
+}
+
+/* ------------------ NOSOTROS ----------------------- */
+
+/* ------------------ CONTACTO ----------------------- */
+
+.containerContacto {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.contactoForm {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    width: 50%;
+    padding: 100px;
+    background-color: #a9cdd1;
+    border-radius: 15px;
+    box-shadow: 0 4px 40px rgb(1, 0, 12);
+
+    margin: 100px 0 100px 0;
+}
+
+.Contacto {
+    font-size: 30px;
+    color: #2973B2;
+    text-align: center;
+    letter-spacing: 1px;
+
+}
+
+input, textarea {
+    padding: 10px;
+    width: 70%;
+    
+    border: #3a718a;
+    border-radius: 15px;
+}
+
+.botonEnviar {
+    padding: 12px;
+    width: 15%;
+
+    margin-top: 50px;
+
+    background-color: #48A6A7;
+    color: white;
+
+    border: none;
+    border-radius: 10px;
+    font-size: 18px;    
+}
+
+.botonEnviar:hover {
+    background-color: #3b8d8e;
+    transition: 0.3s;
+}
+
+
+

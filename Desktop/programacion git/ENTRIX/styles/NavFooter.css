@@ -1,0 +1,96 @@
+* {
+    margin: 0;
+}
+
+/* BARRA PRINCIPAL (NAV) */
+
+.navContainer {
+    display: flex;
+    align-content: center;
+
+    width: 100%;
+
+    position: fixed;
+
+    background-color: rgba(0, 0, 0, 0.6);
+    box-shadow: 0 6px 6px rgba(0, 0, 0, 0.6);
+
+    height: 130px;
+
+    z-index: 3;
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+}
+
+.navbar-collapse {
+    display: flex;
+    justify-content: end;
+}
+
+.navbar-nav, .navbar-brand {
+    gap: 20px;
+    padding: 20px;
+}
+
+.navbar-brand {
+    width: 200px;
+    margin-top: -10px;
+}
+
+.navbar .nav-link {
+    color: white;
+    transition: color 0.3s;
+
+    font-size: 21px;
+    font-weight: 300;
+    letter-spacing: 2px;
+}
+
+.navbar .nav-link:hover {
+    color: #60b2ff;
+}
+
+.navbar .nav-link.active {
+    color: #ffffff;
+}
+
+
+/* FOOTER */
+
+.footerContainer {
+    background-color: #000000fd; 
+    height: 250px;
+    
+    color: white;
+    font-size: 20px;
+}
+
+.parrafoFooter {
+    padding: 50px;
+    width: 50%;
+}
+
+.footerAbajo {
+    display: flex;
+    justify-content: center;
+    align-content: center;
+
+    background-color: #050505; 
+    height: 40px;
+    font-size: 18px;
+}
+
+.derechosTitulo {
+    padding: 5px;
+    letter-spacing: 1px;
+}
+
+.entrixFooter {
+    color: #48A6A7;
+    font-weight: 500;
+}
