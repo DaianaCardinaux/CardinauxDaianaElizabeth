@@ -1,14 +1,36 @@
-@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@200;400;900&display=swap');
-
 * {
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
     margin: 0;
 }
 
-.contenedor {
+body {
+    background:#1A1A40 !important;
+}
+
+.contenedorNav {
     display: flex;
     align-items: center;
-    justify-content: center;
+    justify-content: space-between;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.384);
+
+    background-color: rgb(3, 1, 15); 
+    height: 90px;
+}
+
+
+.Nav {
+    color: white;
+    text-decoration: none;
+
+    font-size: 20px;
+    letter-spacing: 1px;
+
+    margin: 0 10px 0 10px;
+}
+
+.Nav:hover {
+    color: rgb(166, 157, 248);
+    transition: 0.5s;
 }
 
 .NavLinks {
@@ -16,22 +38,24 @@
     gap: 20px;
     margin: 20px;
 }
-
-.contenedorNav {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-}
-
-.Nav {
-    color: white;
-    text-decoration: none;
-}
-
 .imagen {
     width: 4cm;
     padding: -100cm;
+    animation: zoomInfinito 3s ease-in-out infinite;
+    margin: 0 10px 0 20px;
 }
+
+@keyframes zoomInfinito {
+    0%, 100% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.2);
+    }
+}
+
+/* COMIENZO DE CODIGO */
+
 
 .titulo {
     color: rgb(105, 6, 6);
@@ -50,7 +74,7 @@
 }
 
 .VS {
-    color: rgb(153, 8, 8);
+    color:#ecb02c ;
 
     display: flex;
     align-items: center; 
@@ -72,6 +96,8 @@
     padding: 20px;
     font-size: 40px;
 }
+
+/* TARJETAS */
 
 #tarjetaUno, #tarjetaDos, #tarjetaGanadora {
     display: flex;
@@ -97,10 +123,6 @@
     text-align: center;
 }
 
-h1 {
-    font-family:'Courier New', Courier, monospace ;
-}
-
 h2 {
     font-size: 35px;
     letter-spacing: 3px;
@@ -122,6 +144,7 @@ h3 {
 
 h4 {
     text-transform: uppercase;
+    letter-spacing: 1px;
     font-size: 17px;
     margin: 5px 0 10px 5px;
     color: #300000;
@@ -143,4 +166,207 @@ img {
     background-color: #c1fdb5;
     margin-bottom: 100px;
     box-shadow: 0 5px 10px rgba(13, 82, 7, 0.4);
+}
+
+/* BOTONES DE PELEA Y TIRADAS */
+
+.boton {
+    display: flex;
+    justify-content: space-around;
+    align-content: center;
+}
+
+#botonPelea {
+    font-size: 21px; 
+    font-weight: bold; 
+    letter-spacing: 1px;
+    font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif ;
+
+    border-radius: 200px; 
+    background-color:#ecb02c;
+    color: rgb(2, 2, 2);
+    width: 250px;
+
+    padding: 15px;
+
+    margin-bottom: 20px;
+    text-transform: uppercase;
+
+    box-shadow: 2px 5px 10px rgba(0, 0, 0, 0.575);
+}
+
+
+#tiradaUno, #tiradaDos {    
+    font-size: 20px; 
+    font-weight: bold; 
+    letter-spacing: 1px;
+    font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif ;
+
+    border-radius: 200px; 
+    background-color: #be1b1b;
+    color: rgb(219, 218, 218);
+    width: 150px;
+    height: 40px;
+
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.411);
+
+    margin: 20px 0 20px 0;  
+}
+
+.contenedorUno {
+    display: flex;
+    justify-content: center;
+    gap: 200px;
+}
+
+.botonTirada {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+
+    border-radius: 10px;
+
+    background-color: #F5C45E;
+    padding: 20px 50px 10px 50px;
+    margin: 30px;
+    box-shadow: 2px 5px 10px rgba(0, 0, 0, 0.849);
+}
+
+#dadoUno, #dadoDos {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    gap: 100px;
+    margin: 30px;
+}
+
+.mostrarEstilo {
+    font-size: 20px;
+    color:#af0606;
+}
+
+.dadoEstilo {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    border-style: solid;
+    border-color: #af0606;
+    border-width: 2px;
+    border-radius: 4px;
+
+    width: 80px;
+    height: 80px;
+
+    margin-bottom: 50px;
+    background-color: #f3e5e5;
+
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.253);
+}
+
+button:disabled {
+    cursor: not-allowed;
+}
+
+h1 {
+    font-family: Arial, Helvetica, sans-serif;
+    letter-spacing: 1px;
+}
+
+.resultadoDadosEstilo {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+
+    font-size: 10px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color:  #1A1A40 ;
+    background-color:#e6a61d;
+
+    text-transform: uppercase;
+
+    margin: -70px 0 80px 0;
+    padding: 20px;
+    gap: 10px;
+    height: 100px;
+}
+
+.empateEstilo {
+    font-size: 25px;
+
+    color: #300000;
+    letter-spacing: 1px;
+}
+
+h5 {
+    font-size: 15px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    color: #BE3D2A;
+    margin: -10px 0 30px 0;
+}
+
+@keyframes zoomTarjeta{
+    0%, 100% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.1);
+    }
+}
+
+/* ANIMACION AL INICIAR LA PAGINA */
+
+.animarZoom {
+  animation: zoomTarjeta 1.5s ease;
+}
+
+.intro {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    
+    position: fixed;
+
+    top: 0;
+
+    width: 100%; 
+    height: 100%;
+      
+    background: rgba(0, 0, 0, 0.877);
+
+    z-index: 9999;
+    animation: desaparecer 2s ease forwards;
+    animation-delay: 0.8s;
+}
+
+.tituloIntro {
+    font-size: 100px;
+    padding: 20px;
+    letter-spacing: 5px;
+
+    color: rgb(175, 11, 11);
+    text-decoration: none;
+
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;  
+}
+
+@keyframes desaparecer {
+    to {
+        opacity: 0;
+        visibility: hidden;
+    }
+}
+
+.tituloGanadorEstilo {
+    margin: 30px 0 0 0;
+
+    text-decoration: none;
+    text-align: center;
+
+    color: #be1b1b;
+    font-size: 45px;
 }

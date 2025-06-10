@@ -1,15 +1,24 @@
-let GrupoUno = document.getElementById('tarjetaUno')
-let GrupoDos = document.getElementById('tarjetaDos')
-let GrupoGanador = document.getElementById('tarjetaGanadora')
-let TotalUno = document.getElementById('totalUno')
-let TotalDos = document.getElementById('totalDos')
-let TotalGanador = document.getElementById('totalGanador')
+//-------------- ACLARACION ---------------
+
+// GrupoUno = GrupoA
+// GrupoDos = GrupoB
+
+// ----------------------------------------
+
+let grupoUno = document.getElementById('tarjetaUno')
+let grupoDos = document.getElementById('tarjetaDos')
+let grupoGanador = document.getElementById('tarjetaGanadora')
+let totalUno = document.getElementById('totalUno')
+let totalDos = document.getElementById('totalDos')
+let totalGanador = document.getElementById('totalGanador')
+let tituloGanador = document.getElementById('tituloEquipoGanador')
 
 let pokemones = []
-let SumaUno = {ataque: 0, defensa: 0}
-let SumaDos = {ataque: 0, defensa: 0}
+let total = {equipoUno: 0, equipoDos:0}
+let sumaUno = {ataque: 0, defensa: 0}
+let sumaDos = {ataque: 0, defensa: 0}
 
-async function ObtenerPokemon() {
+async function obtenerPokemon() {
     for (let index = 0; index < 6; index++) {
 
         let numeroAleatorio = Math.floor(Math.random() * 500) + 1
@@ -21,7 +30,7 @@ async function ObtenerPokemon() {
     }
 }
 
-function MostrarPokemon(pokemon, contenedor, suma) {
+function mostrarPokemon(pokemon, contenedor, suma) {
 
     let tarjeta = document.createElement('div')
     tarjeta.classList.add('tarjetaPokemon')
@@ -58,7 +67,7 @@ function MostrarPokemon(pokemon, contenedor, suma) {
     contenedor.appendChild(tarjeta)
 }
 
-function MostrarTotal (contenedor, suma) {
+function mostrarTotal (contenedor, suma) {
     let totalAtaque = document.createElement('h4')
     totalAtaque.textContent = (`Total Ataque:  ${suma.ataque}`)
 
@@ -69,47 +78,85 @@ function MostrarTotal (contenedor, suma) {
     contenedor.appendChild(totalDefensa)
 }
 
-function PokemonGrupoUno() {
-    GrupoUnoArray = pokemones.slice(0 ,3)
+function pokemonGrupoUno() {
+    grupoUnoArray = pokemones.slice(0 ,3)
 
-    GrupoUnoArray.forEach(pokemon => {
-        MostrarPokemon(pokemon, GrupoUno, SumaUno)
-    })
+    grupoUnoArray.forEach(
+        function(pokemon) {
+            mostrarPokemon(pokemon, grupoUno, sumaUno)
+        }
+    )
 
-    MostrarTotal(TotalUno, SumaUno)  
+    mostrarTotal(totalUno, sumaUno)  
 }
 
-function PokemonGrupoDos() {
-    GrupoDosArray = pokemones.slice(3 ,6)
+function pokemonGrupoDos() {
+    grupoDosArray = pokemones.slice(3 ,6)
 
-    GrupoDosArray.forEach(pokemon => {
-        MostrarPokemon(pokemon, GrupoDos, SumaDos)
-    })
+    grupoDosArray.forEach(
+        function(pokemon) {
+            mostrarPokemon(pokemon, grupoDos, sumaDos)
+        }
+    )
 
-    MostrarTotal(TotalDos, SumaDos)
+    mostrarTotal(totalDos, sumaDos)
 }
 
-function Comparacion() {
-    console.log(SumaUno.ataque - SumaDos.defensa)
-    console.log(SumaDos.ataque - SumaUno.defensa)
+function mostrarGanador(contenedorGanador, mensaje) {
+    let equipoGanador = document.createElement('h2')
+        equipoGanador.classList.add('tituloGanadorEstilo')
+        equipoGanador.textContent = (mensaje)
 
-    if ((SumaUno.ataque - SumaDos.defensa) > (SumaDos.ataque - SumaUno.defensa)){
-        GrupoUnoArray.forEach(pokemon => {
-            MostrarPokemon(pokemon, GrupoGanador, SumaUno)
-        })
-
-    } else {
-        GrupoDosArray.forEach(pokemon => {
-            MostrarPokemon(pokemon, GrupoGanador, SumaDos)
-        })
-    } 
+        contenedorGanador.appendChild(equipoGanador)
 }
 
-async function Iniciar() {
-    await ObtenerPokemon()
-    PokemonGrupoUno()
-    PokemonGrupoDos()
-    Comparacion()
+function mostrarDiferencia(contenedorDiferencia, mensajeUno, mensajeDos) {
+    let diferenciaEquipoUno = document.createElement('h4')
+        diferenciaEquipoUno.textContent = (mensajeUno)
+
+    let diferenciaEquipoDos = document.createElement('h4')
+        diferenciaEquipoDos.textContent = (mensajeDos)
+
+    contenedorDiferencia.appendChild(diferenciaEquipoUno)
+    contenedorDiferencia.appendChild(diferenciaEquipoDos)
 }
 
-Iniciar()
+
+
+document.getElementById('botonPelea').addEventListener('click', 
+    
+    function(){
+        total.equipoUno = sumaUno.ataque - sumaDos.defensa
+        total.equipoDos = sumaDos.ataque - sumaUno.defensa
+
+            if ((total.equipoUno) > (total.equipoDos)){
+                mostrarGanador(tituloGanador, 'EQUIPO A')
+                    grupoUnoArray.forEach( 
+                        function(pokemon) {
+                            mostrarPokemon(pokemon, grupoGanador, sumaUno)
+                    }
+            )
+
+            } else {
+                mostrarGanador(tituloGanador, 'EQUIPO B')
+                    grupoDosArray.forEach( 
+                        function(pokemon) {
+                            mostrarPokemon(pokemon, grupoGanador, sumaDos)
+                    }
+            )
+        } 
+
+        mostrarDiferencia(totalGanador, `Puntos Equipo A: ${total.equipoUno}`, `Puntos Equipo B: ${total.equipoDos}`)
+
+        console.log (total.equipoUno)
+        console.log(total.equipoDos)
+    }
+)
+
+async function iniciar() {
+    await obtenerPokemon()
+    pokemonGrupoUno()
+    pokemonGrupoDos()
+}
+
+iniciar()

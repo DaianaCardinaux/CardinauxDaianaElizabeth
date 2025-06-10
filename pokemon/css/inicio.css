@@ -1,74 +1,88 @@
-.titulo {
-    color: rgb(204, 14, 14);
-    display: flex;
-    align-items: center; 
-    justify-content: center;
-    margin-top: 20px;
-    margin-bottom: 20px;
+* {
+    margin: 0;
 }
 
-.contenedor {
-    display: flex;
-    align-items: center; 
-    justify-content: center; 
+body {
+    background-color: rgb(3, 1, 15) !important;
 }
 
-.Logo {
-    width: 500px;
-    margin: 100px;
-}
-
-.FondoInicio {
-    background-color: rgb(0, 0, 0);
-    height: 480px;
-    box-shadow: 1px 0.1px 10px rgba(22, 22, 22, 1);
-
-    display: flex;   
-    align-items: center; 
-    justify-content: center; 
-}
-
-#carouselExampleSlidesOnly { 
-    width: 50%;  
-    height: 400px;
-    overflow: hidden;
+.gifContainer {
+    position: relative;
 
     display: flex;
-    justify-content: center;
     align-items: center;
+    justify-content: center;
+
+    width: 100%;
+    height: 630px;
+
+    flex-direction: column;
 }
 
-.carousel-inner {
+.filtroNegro {
+    position: absolute;
     width: 100%;
     height: 100%;
+    background-color: rgba(0, 0, 0, 0.836);
+    z-index: 1;
+
 }
 
-.carousel-item {
-    width: 100%;
-    height: 100%;
-    display: flex; 
-    justify-content: center;
-    align-items: center;
-}
-
-.img-slide {
+.gif {
+    position: absolute;
     width: 100%;
     height: 100%;
     object-fit: cover;
+    z-index: 0;
+
+    box-shadow: 0 10px 10px rgba(0, 0, 0, 0.575);
 }
 
-.boton {
+.tituloPrincipal {
     width: 550px;
-    font-size: 30px; 
+    position: absolute;
+    z-index: 2;
+    animation: zoomInOut 4s ease-in-out infinite;
+    transform-origin: center;
+}
+
+
+@keyframes zoomInOut {
+    0%, 100% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.1);
+    }
+}
+
+
+
+.titulo {
+    text-align: center;
+    margin: 50px 0 30px 0;
+}
+
+.tituloSeleccion {
+    color: #fac32a; 
+    letter-spacing: 2px;
+    font-size: 45px;
+}
+
+
+.boton {
+    font-size: 23px; 
     font-weight: bold; 
-    letter-spacing: 1px;
-    font-family: 'Courier New', Courier, monospace;
+    letter-spacing: 2px;
+    font-family: Arial, Helvetica, sans-serif;
 
     border-radius: 200px; 
-    background-color: rgb(247, 244, 66);
-    color: rgb(185, 0, 0);
+    background-color: #c21313;
+    color: rgb(255, 255, 255);
+    width: 400px;
+    height: 60px;
 
-    margin: 10px;
+    margin-bottom: 20px;
 }
 
 .botones {
@@ -76,4 +90,45 @@
     align-items: center;
     justify-content: center;
     flex-direction: column;
+
+    margin: 0 0 50px 0;
+}
+
+.boton:hover {
+    background-color:rgb(167, 8, 8);
+    font-size: 25px;
+    width: 420px;
+    transition: 1s;
+    box-shadow: 0 10px 10px rgba(14, 0, 0, 0.801);
+}
+
+.intro {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    
+    position: fixed;
+
+    top: 0;
+
+    width: 100%; 
+    height: 100%;
+      
+    background: rgba(0, 0, 0, 0.877);
+
+    z-index: 9999;
+    animation: desaparecer 1s ease forwards;
+    animation-delay: 1s;
+}
+
+.imagenIntro {
+    width: 650px;
+}
+
+@keyframes desaparecer {
+    to {
+        opacity: 0;
+        visibility: hidden;
+    }
 }

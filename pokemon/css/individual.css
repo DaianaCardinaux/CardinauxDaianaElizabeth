@@ -7,38 +7,34 @@ header {
     display: flex;
 }
 
-.titulo {
-    color: #d8d6d5;
-    
-    display: flex;
-    align-items: center; 
-    justify-content: center;
-
-    margin: 30px 0 0px 0;
-    background-color: #102E50;
-    height: 50px;
-    font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif ;
+body {
+    background:#1A1A40 !important;
 }
 
-.tituloPelea {
-    color: #b12712;
-    
-    display: flex;
-    align-items: center; 
-    justify-content: center;
-
-    margin: 30px 0 0 0;
-    background-color: #f8b72a;
-    height: 50px;
-    font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif ;
-}
-
-
-.contenedor {
+.contenedorNav {
     display: flex;
     align-items: center;
-    justify-content: center;
-    background-color: #F5C45E;
+    justify-content: space-between;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.384);
+
+    background-color: rgb(3, 1, 15); 
+    height: 90px;
+}
+
+
+.Nav {
+    color: white;
+    text-decoration: none;
+
+    font-size: 20px;
+    letter-spacing: 1px;
+
+    margin: 0 10px 0 10px;
+}
+
+.Nav:hover {
+    color: rgb(166, 157, 248);
+    transition: 0.5s;
 }
 
 .NavLinks {
@@ -47,16 +43,25 @@ header {
     margin: 20px;
 }
 
-.contenedorNav {
+/* ingreso pokemon */
+
+.contenedorComparar {
+    background-color: #d4a745;
+    width: 570px;
+    height: 550px;
+
+    margin: 50px auto;
+    padding: 20px;
+    box-sizing: border-box;
+
     display: flex;
+    flex-direction: column;
     align-items: center;
-    justify-content: space-between;
-}
+    justify-content: center;
 
+    border-radius: 20px;
 
-.Nav {
-    color: white;
-    text-decoration: none;
+    box-shadow: 0 2px 80px rgb(0, 0, 0);
 }
 
 .contenedorInput {
@@ -65,21 +70,44 @@ header {
     justify-content: center; 
     flex-direction: column;
     width: 100%;
-    margin-top: 20px;
 }
 
-img {
-    width: 200px;
+.titulo {
+    color: #102E50;
+
+    font-size: 35px;
+    
+    display: flex;
+    align-items: center; 
+    justify-content: center;
+
+    text-align: center;
+    font-style: bold;
+    letter-spacing: 1px;
+
+    font-family:Arial, Helvetica, sans-serif ;
+
+    margin: 0 0 20px 0;
 }
 
-.InputPokemon {
-    width: 10%;
+.inputPokemon {
+    width: 20%;
     align-items: center; 
     justify-content: center; 
     border-radius: 10px;
-    margin: 20px;
+    margin: 20px 0 50px 0;
     height: 30px;
-    box-shadow: 0 2px 5px rgba(158, 157, 157, 0.8);
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.8);
+}
+
+.inputPokemon:hover {
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.856);
+}
+
+.TituloIngreso {
+    font-family:Arial, Helvetica, sans-serif ;
+    font-size: 25px;
+    color: #a70404;
 }
 
 .boton {
@@ -89,11 +117,27 @@ img {
     font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif ;
 
     border-radius: 200px; 
-    background-color: #102E50;
+    border-style: ridge;
+    border-color: #050505;
+    border-width: 2px;
+
+    background-color: #a70404;
     color: rgb(219, 218, 218);
     width: 300px;
 
-    margin-bottom: 20px;
+    padding: 2mm;
+    size: 23cm;
+
+    text-decoration: none;
+    text-align: center;
+}
+
+.boton:hover {
+    color: white;
+    font-size: 21px; 
+    background-color: #830404;
+    width: 310px;
+    transition: 0.5s;
 }
 
 input, button {
@@ -101,9 +145,71 @@ input, button {
     size: 23cm;
 }
 
+/* tarjetas */
+
+.tituloPelea {
+    color: #b12712;
+    background-color: #f8b72a;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.856);
+    
+    display: flex;
+    align-items: center; 
+    justify-content: center;
+
+    text-transform: uppercase;
+
+    margin: 30px 0 30px 0;
+    padding: 10px;
+
+    width: 50%;
+    height: 50px;
+
+    border-radius: 20px;
+
+    font-size: 35px;
+    font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif ;
+}
+
+.centrarContenedor {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    flex-direction: column;
+}
+
+.contenedor {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    background-color: #F5C45E;
+    box-shadow: 0 2px 20px rgba(0, 0, 0, 0.856);
+
+    width: 70%;
+
+    border-radius: 20px;
+}
+
+img {
+    width: 200px;
+}
+
+
 .imagen {
     width: 4cm;
     padding: -100cm;
+    animation: zoomInfinito 3s ease-in-out infinite;
+    margin: 0 10px 0 20px;
+}
+
+@keyframes zoomInfinito {
+    0%, 100% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.2);
+    }
 }
 
 .Tarjeta {
@@ -120,7 +226,7 @@ input, button {
     height: 370px;
     margin: 20px 0 20px 0;
 
-    text-align: center;
+    text-align: center;   
 }
 
 .TituloPokemon {
@@ -150,8 +256,51 @@ p {
     color: rgb(255, 255, 255);
 }
 
-.TituloIngreso {
-    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif ;
-    font-size: 20px;
+@keyframes zoomTarjeta{
+    0%, 100% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.1);
+    }
 }
 
+.animarZoom {
+  animation: zoomTarjeta 1.5s ease;
+}
+
+.intro {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    
+    position: fixed;
+
+    top: 0;
+
+    width: 100%; 
+    height: 100%;
+      
+    background: rgba(0, 0, 0, 0.877);
+    color: rgb(175, 11, 11);
+
+    z-index: 9999;
+    animation: desaparecer 2s ease forwards;
+    animation-delay: 0.8s;
+}
+
+.tituloIntro {
+    font-size: 100px;
+    padding: 20px;
+    letter-spacing: 5px;
+
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;  
+}
+
+@keyframes desaparecer {
+    to {
+        opacity: 0;
+        visibility: hidden;
+    }
+}

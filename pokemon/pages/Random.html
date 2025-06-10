@@ -8,6 +8,11 @@
     <title>Pokemon</title>
 </head>
 <body>
+    <div class="intro">
+        <h1 class="tituloIntro" style="color: white;">¡BIENVENIDO!</h1>
+        <h2 class="tituloIntro">BATALLA EN EQUIPOS</h2>
+    </div>
+
     <div class="contenedorNav" style="background-color: rgb(0, 0, 0); height: 80px;">  
         <img class="imagen" src="../images/p.png" alt="">
             <div class="NavLinks">
@@ -18,7 +23,7 @@
 
     
         <div id="grupoUno">  
-            <h1 class="titulo">Grupo 1</h1>      
+            <h1 class="titulo">Equipo A</h1>    
                 <div id="tarjetaUno">
 
                 </div>
@@ -28,21 +33,50 @@
         <h1 class="VS">VS</h1>
 
         <div id="grupoDos">
-            <h1 class="titulo">Grupo 2</h1>
+            <h1 class="titulo">Equipo B</h1>
                 <div id="tarjetaDos">
   
                 </div>
             <h4 id='totalDos'></h4>
         </div>
 
-        <div id="grupoGanador">
-            <h1 class="Ganador">Grupo Ganador</h1>
-                <div id="tarjetaGanadora">
 
-                </div>
-            <h4 id="totalGanador"></h4>
+        <div class="contenedorUno">
+            <div class="botonTirada">
+                <h4 class="tituloPelea">Tirada Equipo Uno</h4>
+                    <button id="tiradaUno">Tirada</button>
+                        <div id="dadoUno"></div>
+                        <div id="muestraUno"></div>
+            </div>
+
+            <div class="botonTirada">
+                <h4 class="tituloPelea">Tirada Equipo Dos</h4>
+                    <button id="tiradaDos">Tirada</button>
+                        <div id="dadoDos"></div>
+                        <div id="muestraDos"></div>
+            </div>
         </div>
 
+        <div class="boton">
+            <button id="botonPelea">Iniciar Pelea</button>
+        </div>
+
+        <div id="grupoGanador">
+            <h1 class="Ganador">Equipo Ganador</h1>
+                <h1 id="tituloEquipoGanador"></h1>
+                    <div id="tarjetaGanadora">
+
+                    </div>
+            <div id="totalGanador">
+                
+            </div>
+        </div>
+
+        <div id="resultadoTirada"></div>
+
+
 </body>
-    <script src="../js/random.js"></script>
+        <script src="../js/random.js"></script>
+        <script src="../js/tirada.js"></script>
+        <script src="../js/animacion.js"></script>
 </html>
